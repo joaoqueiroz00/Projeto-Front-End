@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrendStart — Seu Negócio Começa Aqui</title>
+  <link rel="stylesheet" href="./style.css"> />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">TrendStart</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#tendencias">Tendências</a></li>
+      <li><a href="#perfis">Perfis</a></li>
+    </ul>
+    <button class="nav-cta" onclick="scrollToTrends()">Começar Agora</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🚀 Validado com dados reais de mercado</div>
+      <h1 class="hero-title">
+        Veja Tendências.<br/>
+        <span class="highlight">Valide.</span> Depois Escolha.
+      </h1>
+      <p class="hero-sub">
+        Pare de perder tempo com teoria. O TrendStart mostra o que está em alta <em>agora</em>, valida sua ideia com dados e te dá um plano de ação — em minutos.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="scrollToTrends()">📈 Ver Tendências</button>
+        <button class="btn-ghost" onclick="document.getElementById('perfis').scrollIntoView({behavior:'smooth'})">🎯 Descobrir Meu Perfil</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>2.400+</strong><span>Ideias validadas</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>87%</strong><span>Economizam tempo</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>R$500</strong><span>Mínimo para começar</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mockup-card">
+        <div class="mock-header">
+          <span class="mock-dot red"></span>
+          <span class="mock-dot yellow"></span>
+          <span class="mock-dot green"></span>
+          <span class="mock-title">Tendências do Dia</span>
+        </div>
+        <div class="mock-chat">
+          <div class="mock-msg ai">📈 Estética em domicílio: demanda +92% essa semana</div>
+          <div class="mock-msg user">Investimento inicial: R$300</div>
+          <div class="mock-msg ai">Margem média: 85% — Ótima oportunidade! <span class="typing"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLUXO INVERTIDO -->
+  <section class="flow-section">
+    <div class="container">
+      <div class="section-label">Método TrendStart</div>
+      <h2 class="section-title">O Caminho Certo é ao Contrário</h2>
+      <p class="section-sub">A maioria começa errado. Nós invertemos o processo.</p>
+      <div class="flow-grid">
+        <div class="flow-card wrong">
+          <div class="flow-tag">❌ Jeito Comum</div>
+          <div class="flow-steps">
+            <div class="fstep">Escolhe um negócio</div>
+            <div class="farrow">↓</div>
+            <div class="fstep">Aprende tudo</div>
+            <div class="farrow">↓</div>
+            <div class="fstep">Descobre se dá certo</div>
+          </div>
+        </div>
+        <div class="flow-vs">VS</div>
+        <div class="flow-card right">
+          <div class="flow-tag">✅ Método TrendStart</div>
+          <div class="flow-steps">
+            <div class="fstep glow">Vê tendências reais</div>
+            <div class="farrow bright">↓</div>
+            <div class="fstep glow">Valida com dados</div>
+            <div class="farrow bright">↓</div>
+            <div class="fstep glow">Começa rápido</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENDÊNCIAS -->
+  <section class="trends-section" id="tendencias">
+    <div class="container">
+      <div class="section-label">📊 Dados em Tempo Real</div>
+      <h2 class="section-title">Tendências de Negócio Agora</h2>
+      <p class="section-sub">Micro-orientações práticas. Sem teoria. Só o que importa.</p>
+      <div class="trends-filter">
+        <button class="filter-btn active" onclick="filterTrends('todos', this)">Todos</button>
+        <button class="filter-btn" onclick="filterTrends('ecommerce', this)">E-commerce</button>
+        <button class="filter-btn" onclick="filterTrends('servicos', this)">Serviços</button>
+        <button class="filter-btn" onclick="filterTrends('info', this)">Infoprodutos</button>
+        <button class="filter-btn" onclick="filterTrends('local', this)">Local</button>
+      </div>
+      <div class="trends-grid" id="trendsGrid">
+
+        <div class="trend-card" data-cat="ecommerce">
+          <div class="trend-header">
+            <span class="trend-icon">🛒</span>
+            <div class="trend-meta">
+              <span class="trend-cat">E-commerce</span>
+              <span class="trend-hot">🔥 Em Alta</span>
+            </div>
+          </div>
+          <h3>Revenda de Eletrônicos Recondicionados</h3>
+          <p>Alta demanda por preço acessível. Mercado Livre e Shopee impulsionam vendas. Margem média de 30–50%.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:55%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:72%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$500</span>
+          </div>
+        </div>
+
+        <div class="trend-card" data-cat="servicos">
+          <div class="trend-header">
+            <span class="trend-icon">✂️</span>
+            <div class="trend-meta">
+              <span class="trend-cat">Serviços</span>
+              <span class="trend-hot">🔥 Em Alta</span>
+            </div>
+          </div>
+          <h3>Estética e Beleza em Domicílio</h3>
+          <p>Modelo low-cost com alta procura. Clientes pagam mais por conveniência. Fidelização rápida.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:92%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:40%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:85%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$300</span>
+          </div>
+        </div>
+
+        <div class="trend-card" data-cat="info">
+          <div class="trend-header">
+            <span class="trend-icon">📱</span>
+            <div class="trend-meta">
+              <span class="trend-cat">Infoprodutos</span>
+              <span class="trend-hot">⚡ Explosivo</span>
+            </div>
+          </div>
+          <h3>Cursos Curtos no WhatsApp/Telegram</h3>
+          <p>Micro-cursos de 7 dias por grupos pagos. Baixo custo de produção, distribuição automática.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:30%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:95%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$0</span>
+          </div>
+        </div>
+
+        <div class="trend-card" data-cat="local">
+          <div class="trend-header">
+            <span class="trend-icon">🍱</span>
+            <div class="trend-meta">
+              <span class="trend-cat">Local</span>
+              <span class="trend-hot">🔥 Em Alta</span>
+            </div>
+          </div>
+          <h3>Marmita Fitness por Assinatura</h3>
+          <p>Recorrência garantida, ticket médio crescente. iFood e WhatsApp como canais de venda.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:60%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:65%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$400</span>
+          </div>
+        </div>
+
+        <div class="trend-card" data-cat="ecommerce">
+          <div class="trend-header">
+            <span class="trend-icon">🧴</span>
+            <div class="trend-meta">
+              <span class="trend-cat">E-commerce</span>
+              <span class="trend-hot">📈 Crescendo</span>
+            </div>
+          </div>
+          <h3>Cosméticos Naturais Artesanais</h3>
+          <p>Nicho premium com crescimento de 40% ao ano. Público fiel e disposto a pagar mais.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:45%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:78%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$600</span>
+          </div>
+        </div>
+
+        <div class="trend-card" data-cat="servicos">
+          <div class="trend-header">
+            <span class="trend-icon">💻</span>
+            <div class="trend-meta">
+              <span class="trend-cat">Serviços</span>
+              <span class="trend-hot">⚡ Explosivo</span>
+            </div>
+          </div>
+          <h3>Gestão de Redes Sociais para Pequenos</h3>
+          <p>Alta demanda de MEIs e pequenos negócios locais. Recorrência mensal, pode escalar.</p>
+          <div class="trend-metrics">
+            <div class="metric"><span class="m-label">Demanda</span><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+            <div class="metric"><span class="m-label">Concorrência</span><div class="bar"><div class="fill medium" style="width:50%"></div></div></div>
+            <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:90%"></div></div></div>
+          </div>
+          <div class="trend-footer">
+            <span class="budget">💰 A partir de R$0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ DE PERFIL -->
+  <section class="quiz-section" id="perfis">
+    <div class="container">
+      <div class="section-label">🎯 Descubra Seu Perfil</div>
+      <h2 class="section-title">Qual Negócio Combina Com Você?</h2>
+      <p class="section-sub">Responda 3 perguntas e receba ideias personalizadas.</p>
+      <div class="quiz-box" id="quizBox">
+        <div class="quiz-step active" id="step1">
+          <p class="quiz-question">💰 Qual seu orçamento inicial?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="setAnswer('orcamento','sem-dinheiro', this)">Quase nenhum (até R$200)</button>
+            <button class="quiz-opt" onclick="setAnswer('orcamento','baixo', this)">Baixo (R$200–R$800)</button>
+            <button class="quiz-opt" onclick="setAnswer('orcamento','medio', this)">Médio (R$800–R$3.000)</button>
+            <button class="quiz-opt" onclick="setAnswer('orcamento','alto', this)">Tenho capital (R$3k+)</button>
+          </div>
+        </div>
+        <div class="quiz-step" id="step2">
+          <p class="quiz-question">⏰ Quanto tempo você tem por dia?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="setAnswer('tempo','pouco', this)">Menos de 2h</button>
+            <button class="quiz-opt" onclick="setAnswer('tempo','medio', this)">2–4 horas</button>
+            <button class="quiz-opt" onclick="setAnswer('tempo','bastante', this)">Tempo integral</button>
+          </div>
+        </div>
+        <div class="quiz-step" id="step3">
+          <p class="quiz-question">🎯 O que prefere fazer?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="setAnswer('perfil','vender', this)">Vender produtos</button>
+            <button class="quiz-opt" onclick="setAnswer('perfil','servico', this)">Prestar serviços</button>
+            <button class="quiz-opt" onclick="setAnswer('perfil','digital', this)">Negócio digital</button>
+            <button class="quiz-opt" onclick="setAnswer('perfil','qualquer', this)">Qualquer um</button>
+          </div>
+        </div>
+        <div class="quiz-result hidden" id="quizResult">
+          <div class="result-icon">🎉</div>
+          <h3 id="resultTitle">Seu Perfil: Empreendedor Digital</h3>
+          <p id="resultDesc">Com base no seu perfil, identificamos as melhores oportunidades para você!</p>
+          <div id="resultSuggestions" style="text-align:left; margin-top:16px;"></div>
+        </div>
+      </div>
+      <div class="quiz-progress">
+        <div class="qp-dot active" id="dot1"></div>
+        <div class="qp-dot" id="dot2"></div>
+        <div class="qp-dot" id="dot3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">TrendStart</span>
+        <p>Seu negócio começa com a tendência certa.</p>
+      </div>
+      <div class="footer-links">
+        <span>Sobre</span>
+        <span>Blog</span>
+        <span>Privacidade</span>
+        <span>Contato</span>
+      </div>
+      <p class="footer-copy">© 2025 TrendStart. Feito para quem quer começar de verdade.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ---- SCROLL HELPERS ----
+    function scrollToTrends() { document.getElementById('tendencias').scrollIntoView({behavior:'smooth'}); }
+
+    // ---- TRENDS FILTER ----
+    function filterTrends(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.trend-card').forEach(card => {
+        if (cat === 'todos' || card.dataset.cat === cat) {
+          card.style.display = '';
+          card.style.animation = 'fadeUp 0.4s ease both';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // ---- QUIZ ----
+    const answers = {};
+    let currentStep = 1;
+
+    function setAnswer(key, val, btn) {
+      answers[key] = val;
+      btn.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      setTimeout(() => nextStep(), 400);
+    }
+
+    function nextStep() {
+      const steps = ['step1','step2','step3'];
+      const dots  = ['dot1','dot2','dot3'];
+      if (currentStep < 3) {
+        document.getElementById(steps[currentStep - 1]).classList.remove('active');
+        currentStep++;
+        document.getElementById(steps[currentStep - 1]).classList.add('active');
+        document.getElementById(dots[currentStep - 1]).classList.add('active');
+      } else {
+        document.getElementById('step3').classList.remove('active');
+        showQuizResult();
+      }
+    }
+
+    // Sugestões estáticas por perfil
+    const suggestions = {
+      digital: [
+        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'R$0', margin:'95%' },
+        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'R$0', margin:'90%' },
+      ],
+      vender: [
+        { icon:'🛒', name:'Revenda de Eletrônicos Recondicionados', budget:'R$500', margin:'72%' },
+        { icon:'🧴', name:'Cosméticos Naturais Artesanais', budget:'R$600', margin:'78%' },
+      ],
+      servico: [
+        { icon:'✂️', name:'Estética e Beleza em Domicílio', budget:'R$300', margin:'85%' },
+        { icon:'🍱', name:'Marmita Fitness por Assinatura', budget:'R$400', margin:'65%' },
+      ],
+      qualquer: [
+        { icon:'✂️', name:'Estética e Beleza em Domicílio', budget:'R$300', margin:'85%' },
+        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'R$0', margin:'95%' },
+        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'R$0', margin:'90%' },
+      ],
+    };
+
+    function showQuizResult() {
+      const result = document.getElementById('quizResult');
+      result.classList.remove('hidden');
+      const { perfil } = answers;
+      let title = '', desc = '';
+      if (perfil === 'digital') {
+        title = 'Empreendedor Digital';
+        desc  = 'Você tem perfil para negócios digitais com alta margem e pouco investimento inicial.';
+      } else if (perfil === 'vender') {
+        title = 'Vendedor Nato';
+        desc  = 'Você tem perfil para e-commerce e revenda com boa margem de lucro.';
+      } else if (perfil === 'servico') {
+        title = 'Prestador de Serviços';
+        desc  = 'Serviços têm a menor barreira de entrada e as melhores margens para começar.';
+      } else {
+        title = 'Perfil Versátil';
+        desc  = 'Você pode explorar vários modelos — veja as opções com melhor custo-benefício:';
+      }
+      document.getElementById('resultTitle').textContent = `Seu Perfil: ${title}`;
+      document.getElementById('resultDesc').textContent  = desc;
+
+      const key  = perfil || 'qualquer';
+      const list = suggestions[key] || suggestions.qualquer;
+      const html = list.map(s => `
+        <div style="background:var(--bg-card2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:24px">${s.icon}</span>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:var(--text)">${s.name}</div>
+            <div style="font-size:12px;color:var(--text-muted)">💰 A partir de ${s.budget} &nbsp;|&nbsp; 📈 Margem: ${s.margin}</div>
+          </div>
+        </div>`).join('');
+      document.getElementById('resultSuggestions').innerHTML = html;
+    }
+
+    // NAV SCROLL EFFECT
+    window.addEventListener('scroll', () => {
+      document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
+    });
+  </script>
+</body>
+</html>
