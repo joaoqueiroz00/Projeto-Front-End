@@ -1,0 +1,139 @@
+/* =============================================
+   style.css — Currículo Wagner Junior
+   ============================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------
+   SELETOR POR ELEMENTO — body, p, h2, h3
+   ------------------------------------------- */
+body {
+  font-family: 'Inter', sans-serif;   /* fonte local */
+  background-color: #F0F4F8;          /* fundo azul-acinzentado claro */
+  color: #1A202C;                     /* texto escuro com bom contraste */
+  padding: 2rem 1rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;  /* fonte externa nos títulos */
+  font-size: 1.15rem;
+  font-weight: 700;                    /* negrito */
+  color: #1A365D;
+  border-bottom: 2px solid #3182CE;
+  padding-bottom: 6px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 0.95rem;
+  font-weight: 700;                    /* negrito */
+  color: #2D3748;
+  margin-bottom: 4px;
+}
+
+/* -------------------------------------------
+   SELETOR POR ID — #header
+   ------------------------------------------- */
+#header {
+  background-color: #1A365D;          /* fundo azul escuro */
+  color: #EBF8FF;                     /* texto claro — bom contraste */
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+#header h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #EBF8FF;
+  margin: 0.75rem 0 0.25rem;
+  text-decoration: underline;         /* decoração de texto */
+}
+
+.secao {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.subtitulo {
+  font-style: italic;                 /* estilo itálico */
+  font-size: 0.9rem;
+  color: #BEE3F8;
+}
+
+.foto-perfil {
+  border-radius: 50%;
+  border: 3px solid #90CDF4;
+  object-fit: cover;
+}
+
+.periodo {
+  font-style: italic;                 /* itálico */
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.imagem-ods {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+a[target="_blank"] {
+  color: #2B6CB0;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dashed #2B6CB0;
+}
+
+a[target="_blank"]:hover {
+  color: #E53E3E;                     /* muda para vermelho ao passar o mouse */
+  border-bottom-color: #E53E3E;
+  border-bottom-style: solid;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.contato ul {
+  padding-left: 0;
+}
+
+.contato ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.item-experiencia,
+.item-educacao {
+  margin-top: 0.5rem;
+}
+
+.item-educacao h3 {
+  margin-top: 0.75rem;
+}

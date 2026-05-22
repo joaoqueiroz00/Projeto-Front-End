@@ -18,6 +18,9 @@
     <ul class="nav-links">
       <li><a href="#tendencias">Tendências</a></li>
       <li><a href="#perfis">Perfis</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#curriculos">Currículos</a></li>
+      <li><a href="#contato">Contato</a></li>
     </ul>
     <button class="nav-cta" onclick="scrollToTrends()">Começar Agora</button>
   </nav>
@@ -447,20 +450,70 @@
     </div>
   </section>
 
+
+  <!-- SOBRE -->
+  <section class="flow-section" id="sobre">
+    <div class="container">
+      <div class="section-label">📌 Sobre a Plataforma</div>
+      <h2 class="section-title">Aprenda, Valide e Empreenda</h2>
+      <p class="section-sub">
+        O TrendStart ajuda novos empreendedores a identificarem oportunidades reais de mercado,
+        analisando tendências, margens de lucro, concorrência e potencial de crescimento.
+      </p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" id="curriculos">
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="logo-icon">⚡</span>
         <span class="logo-text">TrendStart</span>
         <p>Seu negócio começa com a tendência certa.</p>
       </div>
+
       <div class="footer-links">
-        <span>Sobre</span>
-        <span>Blog</span>
-        <span>Privacidade</span>
-        <span>Contato</span>
+        <a href="#sobre">Sobre</a>
+        <a href="#tendencias">Tendências</a>
+        <a href="#perfis">Perfis</a>
+        <a href="#curriculos">Currículos</a>
+        <a href="#contato">Contato</a>
       </div>
+
+      <div style="margin-top:40px; width:100%;" id="contato">
+        <h3 style="margin-bottom:20px; color:white;">📄 Currículos Profissionais</h3>
+        <p style="color:#ccc; margin-bottom:18px; max-width:900px;">
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
+
+          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+            <h4 style="color:white;">Micael Marinho Souza</h4>
+            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+            <a href="./curriculos/CurriculumVitae_micael/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+              Abrir Currículo
+            </a>
+          </div>
+
+          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+            <h4 style="color:white;">João Victor Queiroz de Lima</h4>
+            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+            <a href="./curriculos/CurriculumVitae_joao/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+              Abrir Currículo
+            </a>
+          </div>
+
+          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+            <h4 style="color:white;">Wagner Lourenço de Oliveira Junior</h4>
+            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+            <a href="./curriculos/CurriculumVitae_wagner/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+              Abrir Currículo
+            </a>
+          </div>
+
+        </div>
+      </div>
+
       <p class="footer-copy">© 2025 TrendStart. Feito para quem quer começar de verdade.</p>
     </div>
   </footer>
