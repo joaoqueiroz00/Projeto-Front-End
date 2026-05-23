@@ -10,20 +10,25 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-logo">
-      <span class="logo-icon">⚡</span>
-      <span class="logo-text">TrendStart</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#tendencias">Tendências</a></li>
-      <li><a href="#perfis">Perfis</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#curriculos">Currículos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    <button class="nav-cta" onclick="scrollToTrends()">Começar Agora</button>
-  </nav>
+<nav class="nav">
+  <div class="nav-logo">
+    <span class="logo-icon">⚡</span>
+    <span class="logo-text">TrendStart</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#tendencias">Tendências</a></li>
+    <li><a href="#perfis">Perfis</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#curriculos">Currículos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+
+  <div class="nav-buttons">
+    <a href="login.html" class="btn-nav-login">Entrar</a>
+    <a href="cadastro.html" class="btn-nav-cadastro">Cadastrar</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -42,9 +47,13 @@
         Pare de perder tempo com teoria. O TrendStart mostra o que está em alta <em>agora</em>, valida sua ideia com dados e te dá um plano de ação — em minutos.
       </p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="scrollToTrends()">📈 Ver Tendências</button>
-        <button class="btn-ghost" onclick="document.getElementById('perfis').scrollIntoView({behavior:'smooth'})">🎯 Descobrir Meu Perfil</button>
-      </div>
+      <button class="btn-primary" onclick="scrollToTrends()">📈 Ver Tendências</button>
+      <button class="btn-ghost" onclick="document.getElementById('perfis').scrollIntoView({behavior:'smooth'})">
+      🎯 Descobrir Meu Perfil
+      </button>
+      <a href="cadastro.html" class="btn-primary">✨ Criar Conta</a>
+      <a href="login.html" class="btn-ghost">🔐 Entrar</a>
+</div>
       <div class="hero-stats">
         <div class="stat"><strong>2.400+</strong><span>Ideias validadas</span></div>
         <div class="stat-div"></div>
@@ -173,7 +182,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:95%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -233,7 +242,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:90%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito</span>
           </div>
         </div>
 
@@ -253,7 +262,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:92%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -273,7 +282,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:88%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -313,7 +322,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:94%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -353,7 +362,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:93%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -393,7 +402,7 @@
             <div class="metric"><span class="m-label">Margem</span><div class="bar"><div class="fill high" style="width:89%"></div></div></div>
           </div>
           <div class="trend-footer">
-            <span class="budget">💰 A partir de R$0</span>
+            <span class="budget">💰 Gratuito </span>
           </div>
         </div>
 
@@ -514,7 +523,7 @@
         </div>
       </div>
 
-      <p class="footer-copy">© 2025 TrendStart. Feito para quem quer começar de verdade.</p>
+      <p class="footer-copy">© 2026 TrendStart. Feito para quem quer começar de verdade.</p>
     </div>
   </footer>
 
@@ -564,10 +573,10 @@
     // Sugestões estáticas por perfil
     const suggestions = {
       digital: [
-        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'R$0', margin:'95%' },
-        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'R$0', margin:'90%' },
-        { icon:'🤖', name:'Automação com Inteligência Artificial', budget:'R$0', margin:'92%' },
-        { icon:'📚', name:'Mentoria para Concursos e Faculdades', budget:'R$0', margin:'94%' },
+        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'De graça', margin:'95%' },
+        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'De graça', margin:'90%' },
+        { icon:'🤖', name:'Automação com Inteligência Artificial', budget:'De graça', margin:'92%' },
+        { icon:'📚', name:'Mentoria para Concursos e Faculdades', budget:'De graça', margin:'94%' },
       ],
       vender: [
         { icon:'🛒', name:'Revenda de Eletrônicos Recondicionados', budget:'R$500', margin:'72%' },
@@ -578,16 +587,16 @@
       servico: [
         { icon:'✂️', name:'Estética e Beleza em Domicílio', budget:'R$300', margin:'85%' },
         { icon:'🍱', name:'Marmita Fitness por Assinatura', budget:'R$400', margin:'65%' },
-        { icon:'🎬', name:'Edição de Vídeos Curtos para Reels/TikTok', budget:'R$0', margin:'88%' },
-        { icon:'🧠', name:'Criação de Currículos e LinkedIn Profissional', budget:'R$0', margin:'93%' },
-        { icon:'🥗', name:'Consultoria Fitness Online', budget:'R$0', margin:'89%' },
+        { icon:'🎬', name:'Edição de Vídeos Curtos para Reels/TikTok', budget:'De graça', margin:'88%' },
+        { icon:'🧠', name:'Criação de Currículos e LinkedIn Profissional', budget:'De graça', margin:'93%' },
+        { icon:'🥗', name:'Consultoria Fitness Online', budget:'De graça', margin:'89%' },
       ],
       qualquer: [
         { icon:'✂️', name:'Estética e Beleza em Domicílio', budget:'R$300', margin:'85%' },
-        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'R$0', margin:'95%' },
-        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'R$0', margin:'90%' },
-        { icon:'🤖', name:'Automação com Inteligência Artificial', budget:'R$0', margin:'92%' },
-        { icon:'🧠', name:'Criação de Currículos e LinkedIn Profissional', budget:'R$0', margin:'93%' },
+        { icon:'📱', name:'Cursos Curtos no WhatsApp/Telegram', budget:'De graça', margin:'95%' },
+        { icon:'💻', name:'Gestão de Redes Sociais para Pequenos', budget:'De graça', margin:'90%' },
+        { icon:'🤖', name:'Automação com Inteligência Artificial', budget:'De graça', margin:'92%' },
+        { icon:'🧠', name:'Criação de Currículos e LinkedIn Profissional', budget:'De graça', margin:'93%' },
         { icon:'☕', name:'Cafeteria Delivery no Instagram', budget:'R$700', margin:'68%' },
       ],
     };
