@@ -23,15 +23,22 @@
       <p class="subtitulo">Acesse sua conta para acompanhar tendências e oportunidades de negócio.</p>
       <div id="contaCadastrada" class="conta-cadastrada"></div>
 
-      <form action="index.html" method="get">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      <form id="formLogin" action="index.html" method="get" novalidate>
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+  <label for="senha">Senha</label>
+  <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+  <div class="opcoes-login">
+    <label class="lembrar-senha">
+      <input type="checkbox" id="lembrarSenha">
+      Lembrar senha
+    </label>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+    <a href="#" onclick="esqueciSenha()">Esqueci a senha</a>
+  </div>
 
-        <button type="submit">Entrar</button>
-      </form>
+  <button type="submit">Entrar</button>
+</form>
 
       <p class="link-final">Ainda não possui conta? <a href="cadastro.html">Criar cadastro</a></p>
     </section>
@@ -39,19 +46,59 @@
   <script>
   window.onload = function() {
     const nome = localStorage.getItem('nomeCadastrado');
-    const email = localStorage.getItem('emailCadastrado');
+    const emailCadastrado = localStorage.getItem('emailCadastrado');
     const conta = document.getElementById('contaCadastrada');
-
-    if (nome && email) {
+    if (nome && emailCadastrado) {
       conta.innerHTML = `
         <p><strong>Conta cadastrada encontrada:</strong></p>
         <p>Nome: ${nome}</p>
-        <p>E-mail: ${email}</p>
+        <p>E-mail: ${emailCadastrado}</p>
       `;
     } else {
       conta.innerHTML = '<p>Nenhuma conta cadastrada encontrada.</p>';
     }
+    const emailSalvo = localStorage.getItem('lembrarEmail');
+    const senhaSalva = localStorage.getItem('lembrarSenha');
+    if (emailSalvo && senhaSalva) {
+      document.getElementById('email').value = emailSalvo;
+      document.getElementById('senha').value = senhaSalva;
+      document.getElementById('lembrarSenha').checked = true;
+    }
   };
+  const formLogin = document.getElementById('formLogin');
+  formLogin.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const emailDigitado = document.getElementById('email').value;
+    const senhaDigitada = document.getElementById('senha').value;
+    const emailCadastrado = localStorage.getItem('emailCadastrado');
+    const senhaCadastrada = localStorage.getItem('senhaCadastrada');
+    if (emailDigitado === emailCadastrado && senhaDigitada === senhaCadastrada) {
+      if (document.getElementById('lembrarSenha').checked) {
+        localStorage.setItem('lembrarEmail', emailDigitado);
+        localStorage.setItem('lembrarSenha', senhaDigitada);
+      } else {
+        localStorage.removeItem('lembrarEmail');
+        localStorage.removeItem('lembrarSenha');
+      }
+      alert('Login realizado com sucesso!');
+      window.location.href = 'index.html';
+    } else {
+      alert('E-mail ou senha incorretos.');
+    }
+  });
+  function esqueciSenha() {
+    const emailCadastrado = localStorage.getItem('emailCadastrado');
+    if (emailCadastrado) {
+      const novaSenha = prompt('Digite uma nova senha para a conta: ' + emailCadastrado);
+      if (novaSenha !== null && novaSenha.trim() !== '') {
+        localStorage.setItem('senhaCadastrada', novaSenha);
+        alert('Senha alterada com sucesso!');
+      }
+    } else {
+      alert('Nenhuma conta cadastrada encontrada.');
+    }
+  }
+</script>
 </script>
   <footer class="rodape">
     <p>© 2026 TrendStart </p>
