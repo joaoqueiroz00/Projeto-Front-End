@@ -100,7 +100,51 @@
           <div class="a11y-btn-row">
             <button class="a11y-btn" id="a11y-contrast-btn"
               onclick="A11Y.toggleContrast()"
-              aria-pressed="${state.highContrast}">◐ Alto Contraste (7:1)</button>
+              aria-pressed="${state.highContrast}">◐ Alto Contraste </button>
+          </div>
+        </div>
+
+        <div class="a11y-group">
+          <label>5.12.1 · Entrelinhas </label>
+          <div class="a11y-row">
+            <input type="range" id="a11y-line-height"
+              min="${MIN.lineHeight}" max="${MAX.lineHeight}" step="0.1"
+              aria-label="Espaçamento entre linhas"
+              oninput="A11Y.setLineHeight(+this.value)">
+            <span class="a11y-val" id="a11y-line-height-val"></span>
+          </div>
+        </div>
+
+        <div class="a11y-group">
+          <label>5.12.2 · Parágrafos </label>
+          <div class="a11y-row">
+            <input type="range" id="a11y-para-spacing"
+              min="${MIN.paraSpacing}" max="${MAX.paraSpacing}" step="0.1"
+              aria-label="Espaço entre parágrafos"
+              oninput="A11Y.setParaSpacing(+this.value)">
+            <span class="a11y-val" id="a11y-para-spacing-val"></span>
+          </div>
+        </div>
+
+        <div class="a11y-group">
+          <label>5.12.3 · Letras </label>
+          <div class="a11y-row">
+            <input type="range" id="a11y-letter-spacing"
+              min="${MIN.letterSpacing}" max="${MAX.letterSpacing}" step="0.01"
+              aria-label="Espaçamento entre letras"
+              oninput="A11Y.setLetterSpacing(+this.value)">
+            <span class="a11y-val" id="a11y-letter-spacing-val"></span>
+          </div>
+        </div>
+
+        <div class="a11y-group">
+          <label>5.12.4 · Palavras </label>
+          <div class="a11y-row">
+            <input type="range" id="a11y-word-spacing"
+              min="${MIN.wordSpacing}" max="${MAX.wordSpacing}" step="0.01"
+              aria-label="Espaçamento entre palavras"
+              oninput="A11Y.setWordSpacing(+this.value)">
+            <span class="a11y-val" id="a11y-word-spacing-val"></span>
           </div>
         </div>
 
@@ -112,50 +156,6 @@
               aria-label="Escala do texto"
               oninput="A11Y.setFontScale(+this.value)">
             <span class="a11y-val" id="a11y-font-scale-val"></span>
-          </div>
-        </div>
-
-        <div class="a11y-group">
-          <label>5.12.1 · Entrelinhas (mín. 1.5×)</label>
-          <div class="a11y-row">
-            <input type="range" id="a11y-line-height"
-              min="${MIN.lineHeight}" max="${MAX.lineHeight}" step="0.1"
-              aria-label="Espaçamento entre linhas"
-              oninput="A11Y.setLineHeight(+this.value)">
-            <span class="a11y-val" id="a11y-line-height-val"></span>
-          </div>
-        </div>
-
-        <div class="a11y-group">
-          <label>5.12.2 · Parágrafos (mín. 2em)</label>
-          <div class="a11y-row">
-            <input type="range" id="a11y-para-spacing"
-              min="${MIN.paraSpacing}" max="${MAX.paraSpacing}" step="0.1"
-              aria-label="Espaço entre parágrafos"
-              oninput="A11Y.setParaSpacing(+this.value)">
-            <span class="a11y-val" id="a11y-para-spacing-val"></span>
-          </div>
-        </div>
-
-        <div class="a11y-group">
-          <label>5.12.3 · Letras (mín. 0.12em)</label>
-          <div class="a11y-row">
-            <input type="range" id="a11y-letter-spacing"
-              min="${MIN.letterSpacing}" max="${MAX.letterSpacing}" step="0.01"
-              aria-label="Espaçamento entre letras"
-              oninput="A11Y.setLetterSpacing(+this.value)">
-            <span class="a11y-val" id="a11y-letter-spacing-val"></span>
-          </div>
-        </div>
-
-        <div class="a11y-group">
-          <label>5.12.4 · Palavras (mín. 0.16em)</label>
-          <div class="a11y-row">
-            <input type="range" id="a11y-word-spacing"
-              min="${MIN.wordSpacing}" max="${MAX.wordSpacing}" step="0.01"
-              aria-label="Espaçamento entre palavras"
-              oninput="A11Y.setWordSpacing(+this.value)">
-            <span class="a11y-val" id="a11y-word-spacing-val"></span>
           </div>
         </div>
 
