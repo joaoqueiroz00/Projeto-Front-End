@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro - TrendStart</title>
   <link rel="stylesheet" type="text/css" href="./Style/cadastrologin.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap">
 </head>
 <body>
   <header class="topo">
@@ -22,7 +22,7 @@
       <h1>Crie sua conta</h1>
       <p class="subtitulo">Preencha seus dados para acessar as tendências e validar ideias de negócio.</p>
 
-      <form action="login.html" method="get">
+      <form id="formCadastro" action="login.html" method="get" novalidate>
         <label for="nome">Nome completo</label>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
 
@@ -42,10 +42,14 @@
         </select>
 
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+        <input type="password" id="senha" name="senha" placeholder="Crie uma senha (mín. 6 caracteres)" required minlength="6">
 
         <label for="confirmar">Confirmar senha</label>
         <input type="password" id="confirmar" name="confirmar" placeholder="Confirme sua senha" required>
+        <!-- Bug 6: mensagem de erro de confirmação de senha -->
+        <span id="erroSenha" style="display:none; color:#ff6b7a; font-size:0.875rem; margin-top:-4px;">
+          ⚠️ As senhas não coincidem.
+        </span>
 
         <button type="submit">Cadastrar e ir para Login</button>
       </form>
@@ -57,5 +61,36 @@
   <footer class="rodape">
     <p>© 2026 TrendStart</p>
   </footer>
+
+  <!-- Bug 6: validação de confirmação de senha -->
+  <script>
+    const form = document.getElementById('formCadastro');
+    const senha = document.getElementById('senha');
+    const confirmar = document.getElementById('confirmar');
+    const erroSenha = document.getElementById('erroSenha');
+
+    function validarSenhas() {
+      if (confirmar.value && senha.value !== confirmar.value) {
+        erroSenha.style.display = 'block';
+        confirmar.style.borderColor = '#ff6b7a';
+        return false;
+      } else {
+        erroSenha.style.display = 'none';
+        confirmar.style.borderColor = '';
+        return true;
+      }
+    }
+
+    confirmar.addEventListener('input', validarSenhas);
+    senha.addEventListener('input', validarSenhas);
+
+    form.addEventListener('submit', function(e) {
+      if (!validarSenhas()) {
+        e.preventDefault();
+        confirmar.focus();
+      }
+    });
+  </script>
+  <script src="./js/acessibilidade.js"></script>
 </body>
 </html>

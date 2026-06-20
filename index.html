@@ -48,10 +48,6 @@
         Pare de perder tempo com teoria. O TrendStart mostra o que está em alta <em>agora</em>, valida sua ideia com dados e te dá um plano de ação — em minutos.
       </p>
       <div class="hero-actions">
-      <button class="btn-primary" onclick="scrollToTrends()">📈 Ver Tendências</button>
-      <button class="btn-ghost" onclick="document.getElementById('perfis').scrollIntoView({behavior:'smooth'})">
-      🎯 Descobrir Meu Perfil
-      </button>
       <a href="cadastro.html" class="btn-primary">✨ Criar Conta</a>
       <a href="login.html" class="btn-ghost">🔐 Entrar</a>
 </div>
@@ -450,6 +446,9 @@
           <h3 id="resultTitle">Seu Perfil: Empreendedor Digital</h3>
           <p id="resultDesc">Com base no seu perfil, identificamos as melhores oportunidades para você!</p>
           <div id="resultSuggestions" style="text-align:left; margin-top:16px;"></div>
+          <button onclick="reiniciarQuiz()" style="margin-top:24px; background:transparent; border:1px solid var(--accent); color:var(--accent); padding:10px 24px; border-radius:50px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer;">
+            🔄 Refazer o Quiz
+          </button>
         </div>
       </div>
       <div class="quiz-progress">
@@ -473,8 +472,42 @@
     </div>
   </section>
 
+  <!-- CONTATO / CURRÍCULOS -->
+  <section id="contato" style="padding: 60px 40px; background: var(--bg); border-top: 1px solid var(--border);">
+    <div class="container" id="curriculos">
+      <h3 style="margin-bottom:20px; color:white; font-family:'Syne',sans-serif; font-size:1.375rem;">📄 Currículos Profissionais</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
+
+        <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+          <h4 style="color:white;">Micael Marinho Souza</h4>
+          <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+          <a href="./curriculos/CurriculumVitae_micael/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+            Abrir Currículo
+          </a>
+        </div>
+
+        <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+          <h4 style="color:white;">João Victor Queiroz de Lima</h4>
+          <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+          <a href="./curriculos/CurriculumVitae_joao/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+            Abrir Currículo
+          </a>
+        </div>
+
+        <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
+          <h4 style="color:white;">Wagner Lourenço de Oliveira Junior</h4>
+          <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
+          <a href="./curriculos/CurriculumVitae_wagner/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
+            Abrir Currículo
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer class="footer" id="curriculos">
+  <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="logo-icon">⚡</span>
@@ -488,40 +521,6 @@
         <a href="#perfis">Perfis</a>
         <a href="#curriculos">Currículos</a>
         <a href="#contato">Contato</a>
-      </div>
-
-      <div style="margin-top:40px; width:100%;" id="contato">
-        <h3 style="margin-bottom:20px; color:white;">📄 Currículos Profissionais</h3>
-        <p style="color:#ccc; margin-bottom:18px; max-width:900px;">
-        </p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
-
-          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
-            <h4 style="color:white;">Micael Marinho Souza</h4>
-            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
-            <a href="./curriculos/CurriculumVitae_micael/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
-              Abrir Currículo
-            </a>
-          </div>
-
-          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
-            <h4 style="color:white;">João Victor Queiroz de Lima</h4>
-            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
-            <a href="./curriculos/CurriculumVitae_joao/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
-              Abrir Currículo
-            </a>
-          </div>
-
-          <div style="background:#1b1b1b; padding:20px; border-radius:16px; border:1px solid #333;">
-            <h4 style="color:white;">Wagner Lourenço de Oliveira Junior</h4>
-            <p style="color:#ccc;">Desenvolvedor Web Front-end</p>
-            <a href="./curriculos/CurriculumVitae_wagner/" target="_blank" style="display:inline-block; margin-top:10px; padding:10px 16px; border-radius:8px; background:white; color:#111; text-decoration:none; font-weight:600;">
-              Abrir Currículo
-            </a>
-          </div>
-
-        </div>
       </div>
 
       <p class="footer-copy">© 2026 TrendStart. Feito para quem quer começar de verdade.</p>
@@ -569,6 +568,30 @@
         document.getElementById('step3').classList.remove('active');
         showQuizResult();
       }
+    }
+
+    // Bug 4: reinicia o quiz do zero
+    function reiniciarQuiz() {
+      const steps = ['step1','step2','step3'];
+      const dots  = ['dot1','dot2','dot3'];
+      // reseta estado
+      Object.keys(answers).forEach(k => delete answers[k]);
+      currentStep = 1;
+      // limpa seleções
+      document.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+      // esconde resultado
+      document.getElementById('quizResult').classList.add('hidden');
+      // reseta dots
+      dots.forEach((id, i) => {
+        const dot = document.getElementById(id);
+        dot.classList.remove('active');
+        if (i === 0) dot.classList.add('active');
+      });
+      // mostra primeiro step
+      steps.forEach((id, i) => {
+        document.getElementById(id).classList.remove('active');
+        if (i === 0) document.getElementById(id).classList.add('active');
+      });
     }
 
     // Sugestões estáticas por perfil
@@ -641,5 +664,6 @@
       document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
     });
   </script>
+  <script src="./js/acessibilidade.js"></script>
 </body>
 </html>
