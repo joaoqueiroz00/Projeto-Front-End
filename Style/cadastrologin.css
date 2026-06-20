@@ -271,9 +271,21 @@ button:hover {
   font-weight: 600;
 }
 
-.lembrar-senha input {
-  width: auto;
+.lembrar-senha input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: none;
+  accent-color: var(--secondary);
 }
+
 /* =============================================
    ACESSIBILIDADE – ABNT NBR 17225:2025
    ============================================= */
