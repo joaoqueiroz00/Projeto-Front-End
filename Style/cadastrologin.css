@@ -14,11 +14,7 @@
 
   
   --lh: 1.65;
-
-  
   --ls: 0.12em;
-
-  
   --ws: 0.16em;
 }
 
@@ -235,8 +231,18 @@ button:hover {
   }
 }
 
+.conta-cadastrada {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: var(--text);
+}
 
-
+.conta-cadastrada p {
+  margin-bottom: 0.5rem;
+}
 
 /* =============================================
    ACESSIBILIDADE – ABNT NBR 17225:2025

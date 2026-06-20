@@ -21,6 +21,7 @@
       <span class="badge">🔐 Acesso</span>
       <h1>Entrar na plataforma</h1>
       <p class="subtitulo">Acesse sua conta para acompanhar tendências e oportunidades de negócio.</p>
+      <div id="contaCadastrada" class="conta-cadastrada"></div>
 
       <form action="index.html" method="get">
         <label for="email">E-mail</label>
@@ -35,7 +36,23 @@
       <p class="link-final">Ainda não possui conta? <a href="cadastro.html">Criar cadastro</a></p>
     </section>
   </main>
+  <script>
+  window.onload = function() {
+    const nome = localStorage.getItem('nomeCadastrado');
+    const email = localStorage.getItem('emailCadastrado');
+    const conta = document.getElementById('contaCadastrada');
 
+    if (nome && email) {
+      conta.innerHTML = `
+        <p><strong>Conta cadastrada encontrada:</strong></p>
+        <p>Nome: ${nome}</p>
+        <p>E-mail: ${email}</p>
+      `;
+    } else {
+      conta.innerHTML = '<p>Nenhuma conta cadastrada encontrada.</p>';
+    }
+  };
+</script>
   <footer class="rodape">
     <p>© 2026 TrendStart </p>
   </footer>
